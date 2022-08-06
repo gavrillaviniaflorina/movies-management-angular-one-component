@@ -1,0 +1,25 @@
+<article class="col-11  d-flex flex-row justify-content-around align-items-center m-3 border-5 border-primary border rounded" *ngIf="!updateActive">
+    <section class="d-flex flex-column align-items-center">
+        <h1>{{movie.title}}</h1>
+        <p>year:{{movie.year}}</p>
+        <p>price:{{movie.price}}</p>
+    </section>
+
+    <section class="d-flex flex-row justify-content-between">
+        <button class="btn btn-primary" (click)="onUpdateMovie()">Update</button>
+        <button class="btn btn-danger" (click)="onDeleteMovie()">Delete</button>
+    </section>
+</article>
+
+<article class=" col-11 d-flex flex-row justify-content-between align-items-center m-3 border border-primary border rounded" *ngIf="updateActive">
+    <section class="d-flex flex-column align-items-center">
+        <input class="m-2" placeholder="{{movie.title}}" [(ngModel)]="title">
+        <input class="m-2" placeholder="{{movie.year}}" [(ngModel)]="year">
+        <input class="m-2" placeholder="{{movie.price}}" [(ngModel)]="price">
+    </section>
+
+    <section>
+        <button class="btn btn-success" (click)="onSaveMovie()">Save</button>
+        <button class="btn btn-secondary ">Cancel</button>
+    </section>
+</article>
